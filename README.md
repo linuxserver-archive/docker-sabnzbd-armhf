@@ -10,12 +10,11 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [IRC][ircurl] on freenode at `#linuxserver.io`
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
-# linuxserver/sabnzbd
-[![](https://images.microbadger.com/badges/image/linuxserver/sabnzbd.svg)](http://microbadger.com/images/linuxserver/sabnzbd "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/sabnzbd.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/sabnzbd.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-sabnzbd)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-sabnzbd/)
-[hub]: https://hub.docker.com/r/linuxserver/sabnzbd/
+# lsioarmhf/sabnzbd
+[![](https://images.microbadger.com/badges/image/lsioarmhf/sabnzbd.svg)](http://microbadger.com/images/lsioarmhf/sabnzbd "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/lsioarmhf/sabnzbd.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/lsioarmhf/sabnzbd.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io-armhf/lsioarmhf-sabnzbd)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io-armhf/job/lsioarmhf-sabnzbd/)
+[hub]: https://hub.docker.com/r/lsioarmhf/sabnzbd/
 
-SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction. 
-This container includes par2 multicore.
+SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.
 
 [![sabnzbd](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sabnzbd-banner.png)][saburl]
 [saburl]: http://sabnzbd.org/
@@ -30,7 +29,7 @@ docker create --name=sabnzbd \
 -e PGID=<gid> -e PUID=<uid> \
 -e TZ=<timezone> \
 -p 8080:8080 -p 9090:9090 \
-linuxserver/sabnzbd
+lsioarmhf/sabnzbd
 ```
 
 **Parameters**
@@ -58,6 +57,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 ```
 
 ## Setting up the application 
+`IMPORTANT... THIS IS THE ARMHF VERSION`
 Initial setup is done from the http port.
 Https access for sabnzbd needs to be enabled in either the intial setup wizard or in the configure settings of the webui, be sure to use 9090 as port for https.
 See here for info on some of the switch settings for sabnzbd http://wiki.sabnzbd.org/configure-switches
@@ -71,12 +71,4 @@ See here for info on some of the switch settings for sabnzbd http://wiki.sabnzbd
 
 ## Versions
 
-+ **11.09.16:** Bump to release of 1.10
-+ **09.09.16:** Rebase back to xenial,
-issues with alpine version of python and 1.10 branch of sab.
-+ **28.08.16:** Rebase to alpine, using git version of sab.
-+ **17.03.16:** Bump to install 1.0 final at startup
-+ **14.03.16:** Refresh image to pick up latest RC
-+ **23.01.15:** Refresh image.
-+ **14.12.15:** Refresh image to pick up latest beta
-+ **21.08.15:** Intial Release. 
++ **13.09.16:** Intial Release. 
