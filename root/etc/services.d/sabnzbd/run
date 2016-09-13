@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+exec \
+	s6-setuidgid abc /usr/bin/sabnzbdplus \
+	--config-file /config --server 0.0.0.0:8080
+
+
