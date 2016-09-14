@@ -72,4 +72,4 @@ See here for info on some of the switch settings for sabnzbd http://wiki.sabnzbd
 ## Versions
 
 + **14.09.16:** Add compiled version of multicore par2
-+ + **13.09.16:** Intial Release.
++ **13.09.16:** Intial Release.
