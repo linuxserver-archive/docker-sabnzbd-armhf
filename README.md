@@ -11,7 +11,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # lsioarmhf/sabnzbd
-[![](https://images.microbadger.com/badges/image/lsioarmhf/sabnzbd.svg)](http://microbadger.com/images/lsioarmhf/sabnzbd "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/lsioarmhf/sabnzbd.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/lsioarmhf/sabnzbd.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io-armhf/lsioarmhf-sabnzbd)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io-armhf/job/lsioarmhf-sabnzbd/)
+[![](https://images.microbadger.com/badges/version/lsioarmhf/sabnzbd.svg)](https://microbadger.com/images/lsioarmhf/sabnzbd "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/lsioarmhf/sabnzbd.svg)](http://microbadger.com/images/lsioarmhf/sabnzbd "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/lsioarmhf/sabnzbd.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/lsioarmhf/sabnzbd.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io-armhf/lsioarmhf-sabnzbd)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io-armhf/job/lsioarmhf-sabnzbd/)
 [hub]: https://hub.docker.com/r/lsioarmhf/sabnzbd/
 
 SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.
@@ -68,7 +68,15 @@ See here for info on some of the switch settings for sabnzbd http://wiki.sabnzbd
 * Shell access whilst the container is running: `docker exec -it sabnzbd /bin/bash`
 * To monitor the logs of the container in realtime: `docker logs -f sabnzbd`
 
+* container version number 
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' sabnzbd`
+
+* image version number
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' lsioarmhf/sabnzbd`
 
 ## Versions
 
++ **14-10-16:** Add version layer information.
 + **13.09.16:** Intial Release. 
