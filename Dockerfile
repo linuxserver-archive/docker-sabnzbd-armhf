@@ -7,8 +7,9 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # environment settings
-ENV HOME="/config"
 ARG DEBIAN_FRONTEND="noninteractive"
+ENV HOME="/config" \
+PYTHONIOENCODING=utf-8
 
 # install packages
 RUN \
