@@ -1,12 +1,7 @@
 FROM lsiobase/xenial.armhf
 MAINTAINER sparklyballs
 
-# set version label
-ARG BUILD_DATE
-ARG VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-
-# environment settings
+# environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/config" \
 PYTHONIOENCODING=utf-8
@@ -20,17 +15,12 @@ RUN \
  apt-key adv --keyserver hkp://keyserver.ubuntu.com:11371 --recv-keys 0x98703123E0F52B2BE16D586EF13930B14BB9F05F && \
  apt-get update && \
  apt-get install -y \
-	libtbb2 \
 	p7zip-full \
+	par2-mt \
+	python-sabyenc \
 	sabnzbdplus \
 	unrar \
 	unzip && \
-
-# install par2 multithreaded
- apt-get remove -y \
-	par2 && \
- apt-get install -y \
-	par2-mt && \
 
 # cleanup
  apt-get clean && \
