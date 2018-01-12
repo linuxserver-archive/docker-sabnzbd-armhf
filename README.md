@@ -95,6 +95,7 @@ See here for info on some of the switch settings for sabnzbd http://wiki.sabnzbd
 
 ## Versions
 
++ **12.01.18:** Fix continuation lines.
 + **10.04.17:** Bump to 2.0 Release.
 + **07.03.17:** Add multithread par2, use unstable branch for alpha/betas etc..
 + **08.02.17:** Add pythonioenconding=utf8 as env.
